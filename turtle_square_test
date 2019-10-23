@@ -1,0 +1,32 @@
+import turtle
+import random
+t  = turtle.Pen()
+
+#define a function
+def my_square2(size,red,green,blue,fill):
+    if fill == True:
+        t.color(red,green,blue)
+        t.begin_fill()
+    for x in range(1,5):
+        t.forward(size)
+        t.left(90)
+    if fill == True:
+        t.end_fill()
+        
+#define another function
+def my_random_square(size):
+    t.color(random.random(),random.random(),random.random())
+    t.penup()
+    t.setx(random.randint(1,300))
+    t.sety(random.randint(1,300))
+    t.begin_fill()
+    t.pendown()
+    for a in range(1,5):
+        t.forward(size)
+        t.right(90)
+    t.end_fill()
+
+#define the third function
+def generate_random_square(size,number):
+    for i in range (0,number):
+        my_random_square(size)
